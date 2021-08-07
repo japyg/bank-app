@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/bank-app/static/css/main.a617e044.chunk.css",
+    "main.js": "/bank-app/static/js/main.f2bf2fb3.chunk.js",
+    "main.js.map": "/bank-app/static/js/main.f2bf2fb3.chunk.js.map",
+    "runtime-main.js": "/bank-app/static/js/runtime-main.7ace9dfb.js",
+    "runtime-main.js.map": "/bank-app/static/js/runtime-main.7ace9dfb.js.map",
+    "static/js/2.b3cb456d.chunk.js": "/bank-app/static/js/2.b3cb456d.chunk.js",
+    "static/js/2.b3cb456d.chunk.js.map": "/bank-app/static/js/2.b3cb456d.chunk.js.map",
+    "static/js/3.c1290798.chunk.js": "/bank-app/static/js/3.c1290798.chunk.js",
+    "static/js/3.c1290798.chunk.js.map": "/bank-app/static/js/3.c1290798.chunk.js.map",
+    "index.html": "/bank-app/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/bank-app/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.b3cb456d.chunk.js.LICENSE.txt": "/bank-app/static/js/2.b3cb456d.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/bank-app/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ace9dfb.js",
+    "static/js/2.b3cb456d.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.f2bf2fb3.chunk.js"
+  ]
+}
