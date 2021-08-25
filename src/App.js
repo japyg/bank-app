@@ -18,26 +18,28 @@ function App() {
   const onDeposit = (depositAccountName, newBalance) => {
     setAccountData(
       accountData.map((account) => {
-        if (account.name === depositAccountName) {
+        if (depositAccountName === account.name) {
           account.bal = parseInt(account.bal) + parseInt(newBalance);
           alert("Deposit Successful!");
-        } else if (account.name !== depositAccountName) {
-          alert("No account name found!");
+        } else if (depositAccountName !== account.name) {
+          // alert("Account name does not exist!");
         }
         return account;
       })
     );
   };
 
-  const onWithdraw = (withdrawAccount, newBalance) => {
+  const onWithdraw = (withdrawAccountName, newBalance) => {
     setAccountData(
       accountData.map((account) => {
-        if (account.name === withdrawAccount) {
+        if (account.name === withdrawAccountName && account.bal > newBalance) {
           account.bal = parseInt(account.bal) - parseInt(newBalance);
-
           alert("Withdraw Successful!");
-        } else if (account.name !== withdrawAccount) {
-          alert("No account name found!");
+        } else if (parseInt(account.bal) < parseInt(newBalance)) {
+          account.bal = account.bal;
+          alert("Insufficient Funds!");
+        } else if (account.name !== withdrawAccountName) {
+          // alert("Account name not found!");
         }
         return account;
       })
@@ -47,11 +49,31 @@ function App() {
   const onTransfer = (tFromAccountName, tToAccountName, newBalance) => {
     setAccountData(
       accountData.map((account) => {
-        if (account.name === tFromAccountName) {
+        if (account.name === tFromAccountName && account.bal > newBalance) {
           account.bal = parseInt(account.bal) - parseInt(newBalance);
+          alert("Fund transfer successful!");
+        } else if (
+          tFromAccountName === account.name &&
+          tToAccountName !== account.name
+        ) {
+          account.bal = parseInt(account.bal);
+          alert("No account name found!");
+        } else if (
+          tFromAccountName === account.name &&
+          account.bal < newBalance
+        ) {
+          alert("Insufficient funds!");
+        } else if (
+          account.name === tToAccountName &&
+          account.name !== tFromAccountName
+        ) {
+          account.bal = account.bal;
+          alert("No account name found!");
         } else if (account.name === tToAccountName) {
           account.bal = parseInt(account.bal) + parseInt(newBalance);
+          alert("Fund transfer successful!");
         }
+
         return account;
       })
     );

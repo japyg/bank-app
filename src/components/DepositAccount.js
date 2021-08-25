@@ -19,11 +19,6 @@ function DepositAccount({ onDeposit }) {
       setDepositAccountName("");
       setNewBalance("");
     }
-
-    // const depBalCurrency = new Intl.NumberFormat("en-Ph", {
-    //   style: "currency",
-    //   currency: "PHP",
-    // }).format(newBalance);
   };
 
   return (
@@ -70,20 +65,6 @@ function DepositAccount({ onDeposit }) {
                 type="number"
                 className="border-2 border-indigo-800 mt-2 mb-1 p-1 w-6/12"
               ></input>
-
-              {/* <NumberFormat
-                thousandsGroupStyle="thousand"
-                name="account_balance"
-                value={newBalance}
-                onChange={(e) => setNewBalance(e.target.value)}
-                // prefix="P"
-                decimalSeparator="."
-                displayType="input"
-                type="text"
-                thousandSeparator={true}
-                allowNegative={false}
-                className="border-2 border-indigo-800  mb-1 p-1 w-6/12"
-              /> */}
 
               <div className="text-center py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-blue-500 hover:bg-blue-700 w-24 mt-10">
                 <button onClick={onHandleSubmit}>Submit</button>

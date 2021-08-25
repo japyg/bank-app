@@ -2,24 +2,12 @@ import Modal from "react-modal";
 import { useState } from "react";
 import NumberFormat from "react-number-format";
 
-function NewAccount({
-  // setAccountName,
-  // setAccountNumber,
-  // setBalance,
-  setAccountData,
-  accountData,
-}) {
+function NewAccount({ setAccountData, accountData }) {
   //state for the modal
   const [modalIsOpen, setmodalIsOpen] = useState(false);
 
   const dataHandler = (e) => {
     e.preventDefault();
-
-    // const bal = e.target.account_balance.value;
-    // const balCurrency = new Intl.NumberFormat("en-Ph", {
-    //   style: "currency",
-    //   currency: "PHP",
-    // }).format(bal);
 
     const data = {
       name: e.target.account_name.value,
@@ -28,13 +16,15 @@ function NewAccount({
     };
 
     if (e.target.account_balance.value < 1) {
+      alert("Please enter a value greater than zero");
       return false;
-      alert("Please enter a value greater than P1.00");
     } else {
       setAccountData([...accountData, data]);
+
       alert("Successfully added account!");
       e.target.account_name.value = "";
       e.target.account_number.value = "";
+      console.log(e.target.account_number.value);
       e.target.account_balance.value = "";
     }
   };
@@ -67,6 +57,7 @@ function NewAccount({
               <br></br>
               <input
                 name="account_name"
+                pattern="[A-Z a-z\\s]*"
                 required
                 type="text"
                 className="border-2 border-indigo-800 mt-2 mb-1 p-1 w-6/12"
@@ -98,20 +89,7 @@ function NewAccount({
                 className="border-2 border-indigo-800 mt-2 mb-1 p-1 w-6/12"
               ></input>
 
-              {/* <NumberFormat
-                thousandsGroupStyle="thousand"
-                name="account_balance"
-                // prefix="P"
-                decimalSeparator="."
-                displayType="input"
-                type="text"
-                thousandSeparator={true}
-                allowNegative={false}
-                required
-                className="border-2 border-indigo-800 mt-2 mb-1 p-1 w-6/12"
-              /> */}
-
-              <div className="text-center py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-blue-500 hover:bg-blue-700 w-24 ">
+              <div className="text-center py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-blue-500 hover:bg-blue-700 w-24 mt-8 ">
                 <button>Submit</button>
               </div>
             </div>

@@ -15,14 +15,12 @@ const TransferFunds = ({ onTransfer }) => {
       alert("Please provide an amount higher than P1.00");
       return false;
     } else {
-      return true;
+      onTransfer(accountName, accountNameTo, newBalance);
+
+      setAccountName("");
+      setAccountNameTo("");
+      setNewBalance("");
     }
-
-    onTransfer(accountName, accountNameTo, newBalance);
-
-    setAccountName("");
-    setAccountNameTo("");
-    setNewBalance("");
   };
 
   return (
